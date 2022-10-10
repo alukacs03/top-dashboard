@@ -26,6 +26,17 @@ body {
     grid-template-rows: 165px 2fr 2fr;
 }
 
+.maincontenttitle {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+
+h3 {
+    height: 1ch;
+    margin: 0;
+}
+
 .sidebar {
     display: grid;
     background-color: blueviolet;
@@ -37,17 +48,63 @@ body {
     row-gap: 1rem;
     column-gap: 0.5rem;
     padding: 20px;
-    padding-top: 0;
 }
 
 .articles {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-items: start;
 }
 
+article {
+    display: grid;
+    grid-template-columns: 1fr 30px 30px 30px;
+    grid-template-rows: 2ch 1fr 30px;
+    grid-template:
+        "title title title title"
+        "body body body body"
+        ". icon1 icon2 icon3";
+    background-color: #dddddd;
+    border-radius: 1rem;
+    padding: 15px;
+    border-left: 8px solid #00c247;
+}
+
+.favicon {
+    grid-area: icon1;
+}
+
+.seenicon {
+    grid-area: icon2;
+}
+
+.sourceicon {
+    grid-area: icon3;
+}
+
+article>h3 {
+    grid-area: title;
+}
+
+article>p {
+    grid-area: body;
+}
+
+.articleicon {
+    align-self: end;
+    width: 30px;
+    height: auto;
+}
+
+.articleicon:hover {
+    filter: invert(48%) sepia(68%) saturate(1450%) hue-rotate(105deg) brightness(96%) contrast(101%);}
+
 .projects {
-    margin: 10px;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 1rem;
+    margin: 30px;
     grid-row: 2/4;
 }
 
