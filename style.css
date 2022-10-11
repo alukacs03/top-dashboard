@@ -2,6 +2,11 @@
 * {
     font-family: 'Roboto', sans-serif;
 }
+
+:root {
+    --beeyellow: #E9AB17;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -17,13 +22,14 @@ body {
     height: 50px;
     justify-self: end;
     align-self: center;
+    cursor: pointer;
 }
 
 .maincontent {
     display: grid;
-    background-color: #f8fafc;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: 165px 2fr 2fr;
+    background-color: #e2e8f0;
+    grid-template-columns: 4fr 1fr;
+    grid-template-rows: 165px 1fr 1fr;
 }
 
 .maincontenttitle {
@@ -32,14 +38,22 @@ body {
 }
 
 
-h3 {
-    height: 1ch;
+h3,
+.h3title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0;
     margin: 0;
+}
+
+article>p {
+    padding: 0;
+    margin-top: 5px;
 }
 
 .sidebar {
     display: grid;
-    background-color: blueviolet;
+    background-color: var(--beeyellow);
     color: white;
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 6% repeat(11, 2%);
@@ -65,10 +79,11 @@ article {
         "title title title title"
         "body body body body"
         ". icon1 icon2 icon3";
-    background-color: #dddddd;
+    background-color: #ffff;
     border-radius: 1rem;
     padding: 15px;
-    border-left: 8px solid #00c247;
+    border-left: 8px solid var(--beeyellow);
+    box-shadow: 2px 2px 8px 0 #d1d1d1;
 }
 
 .favicon {
@@ -95,16 +110,18 @@ article>p {
     align-self: end;
     width: 30px;
     height: auto;
+    cursor: pointer;
 }
 
 .articleicon:hover {
-    filter: invert(48%) sepia(68%) saturate(1450%) hue-rotate(105deg) brightness(96%) contrast(101%);}
-
+    filter: invert(68%) sepia(72%) saturate(783%) hue-rotate(355deg) brightness(98%) contrast(86%);
+}
+    
 .projects {
-    background-color: #ffffff;
     padding: 15px;
     border-radius: 1rem;
-    margin: 30px;
+    margin-left: 15px;
+    margin-right: 15px;
     grid-row: 2/4;
 }
 
@@ -118,15 +135,21 @@ article>p {
 }
 
 .bigprofile {
-    height: 5rem;
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    cursor: pointer;
 }
 
 .headeractions {
     display: grid;
-    grid-template-columns: 1fr 5fr 4fr;
+    grid-template-columns: 90px 5fr 3fr;
     grid-template-rows: 1fr;
     justify-items: center;
     align-items: center;
+    gap: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .hidiv{
@@ -135,53 +158,55 @@ article>p {
     justify-self: start;
     display: grid;
     padding: 0;
-    gap: 5px;
+    gap: 0px;
     justify-items: start;
-    align-items: center;
 }
 
 .hidiv p {
     margin: 0;
-    height: 1ch;
     align-self: end;
 }
 
 .hidiv h1 {
     padding: 0;
     margin: 0;
-    height: 1ch;
     align-self: start;
 }
 
 .actionbuttons {
     display: grid;
+    width: 100%;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    justify-items: space-evenly;
+    justify-items: end;
 }
 
 button {
-    background-color: blueviolet;
+    background-color: var(--beeyellow);
     color: white;
-    height: 40px;
-    width: 80px;
+    height: 50px;
+    width: 120px;
+    font-size: large;
     border-radius: 3rem;
     border: none;
     font-weight: bold;
-
+    cursor: pointer;
 }
 
 .menuoption {
     font-size: 1.3rem;
     font-weight: 600;
+    cursor: pointer;
 }
 
 .topbar {
-    height: 55px;
+    padding-top: 15px;
+    padding-right: 30px;
+    height: 60px;
     display: grid;
-    grid-template-columns: 50px 8fr 1fr 1fr 1.5fr;
+    grid-template-columns: 50px 8fr 50px 70px 1fr;
     align-items: center;
     justify-items: center;
+    padding-left: 30px;
 }
 
 .searchbar {
@@ -202,9 +227,70 @@ button {
     padding-right: 10px;
     height: 30px;
     width: auto;
+    cursor: pointer;
     filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(98deg) brightness(104%) contrast(101%);
 }
 
 .headericon {
     height: 30px;
+    cursor: pointer;
+}
+
+.announcementcard,
+.trendingcard {
+    background-color: #ffff;
+    border-radius: 1rem;
+    padding: 20px;
+    margin-right: 30px;
+    box-shadow: 2px 2px 8px 0 #d1d1d1;
+}
+
+.announcement {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3ch 1fr;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.announcementtitle {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+hr {
+    border: 1px solid #ddd;
+}
+
+.smallprofile {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.trendingitem {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: 80px 1fr;
+    column-gap: 10px;
+    align-items: center;
+}
+
+.trendingtext {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    font-size: 0.9rem;
+}
+
+.trendinguser {
+    font-weight: bold;
+    flex: 1;
+    cursor: pointer;
+}
+
+.trendingtitle {
+    font-weight: 200;
 }
