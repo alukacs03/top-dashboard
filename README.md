@@ -1,6 +1,7 @@
 # top-dashboard
  Dashboard mockup done for The Odin Project
  Bee movie themed :) 
+ The page can be found here: https://lukiakos.github.io/top-dashboard/
 
 The CSS could use some cleaning up, but everything is in working order.
 NO JavaScript as this is just a mockup and a way for me to learn more about positioning elements with CSS Grid. 
